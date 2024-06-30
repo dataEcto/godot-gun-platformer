@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7xgpx4sa4nhn"]
+[gd_scene load_steps=20 format=3 uid="uid://c7xgpx4sa4nhn"]
 
 [ext_resource type="Texture2D" uid="uid://oeapxbw6pfmx" path="res://warped-files/warped-files/PNG/spritesheets/player/player-idle.png" id="1_cfgss"]
+[ext_resource type="Script" path="res://Scenes/Scripts/Player.gd" id="1_pyb2y"]
 [ext_resource type="Texture2D" uid="uid://bwsaf6qja2c3e" path="res://warped-files/warped-files/PNG/spritesheets/player/player-run.png" id="2_1cxy2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c75f0"]
@@ -125,11 +126,12 @@ height = 38.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+script = ExtResource("1_pyb2y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_v8dyb")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
